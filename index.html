@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS GAMING - חנות הגיימינג המתקדמת בישראל</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#0a0b10',
+                            card: '#121520',
+                            border: '#1e2235',
+                            purple: '#a855f7',
+                            cyan: '#06b6d4',
+                            pink: '#ec4899'
+                        }
+                    },
+                    fontFamily: {
+                        heebo: ['Heebo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Heebo -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: #0a0b10;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .neon-glow-purple {
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+        }
+        .neon-text-cyan {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+        }
+        .neon-text-purple {
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+        }
+        .cyber-card {
+            background: linear-gradient(135deg, #121520 0%, #171b2c 100%);
+            border: 1px solid #1e2235;
+            transition: all 0.3s ease;
+        }
+        .cyber-card:hover {
+            border-color: #06b6d4;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0b10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e2235;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+
+    <!-- Header & Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-cyber-dark/90 backdrop-blur-md border-b border-cyber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="switchPage('home')">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyber-purple to-cyber-cyan flex items-center justify-center neon-glow-purple">
+                        <i class="fa-solid fa-gamepad text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink bg-clip-text text-transparent">
+                        NEXUS<span class="text-white">.GG</span>
+                    </span>
+                </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+        <!-- ================= PAGE 1: HOME ================= -->
+        <section id="page-home" class="page-view animate-fade-in">
+            <!-- Hero Section -->
+            <div class="relative overflow-hidden py-20 lg:py-32 bg-gradient-to-b from-cyber-card/40 to-cyber-dark border-b border-cyber-border">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#06b6d4_1px,transparent_1px)] [background-size:24px_24px]"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-cyber-purple text-sm font-semibold mb-6">
+                        <i class="fa-solid fa-fire animate-bounce"></i> הדור הבא של עולם הגיימינג כבר כאן
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6">
+                        שלוט במשחק עם <br>
+                        <span class="bg-gradient-to-r from-cyber-cyan via-cyber-purple to-cyber-pink bg-clip-text text-transparent neon-text-cyan">
+                            ציוד העל של NEXUS
+                        </span>
+                    </h1>
+                    <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 mb-10">
+                        מחשבי גיימינג קיצוניים, ציוד היקפי תחרותי, וקונסולות הדור הבא במחירים הטובים ביותר בישראל עם אחריות מלאה ומשלוח מהיר.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="switchPage('offer')" class="px-8 py-4 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-purple text-black font-bold text-lg hover:opacity-90 transition-all shadow-lg neon-glow-cyan">
+                            <i class="fa-solid fa-bolt ml-2"></i> לכל המוצרים והמבצעים
+                        </button>
+                        <button onclick="switchPage('contact')" class="px-8 py-4 rounded-xl bg-cyber-card border border-cyber-border text-white font-bold text-lg hover:border-cyber-cyan transition-all">
+                            <i class="fa-solid fa-headset ml-2"></i> צור קשר עם מומחה
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Products Grid -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex justify-between items-center mb-10">
+                    <div>
+                        <h2 class="text-3xl font-black">מוצרים פופולריים</h2>
+                        <p class="text-gray-400">הנבחרים של הגיימרים המקצועיים</p>
+                    </div>
+                    <button onclick="switchPage('offer')" class="text-cyber-cyan hover:underline font-semibold flex items-center gap-2">
+                        צפה בהכל <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-cyber-dark mb-4 flex items-center justify-center border border-cyber-border">
+                                <span class="absolute top-3 right-3 bg-cyber-pink/20 text-cyber-pink text-xs font-bold px-2.5 py-1 rounded-full border border-cyber-pink/30">מבצע חם</span>
+                                <i class="fa-solid fa-computer text-6xl text-cyber-cyan"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">מחשב גיימינג NEXUS Beast RTX 4070</h3>
+                            <p class="text-sm text-gray-400 mb-4">i7-14700KF | 32GB RAM | 1TB NVMe | RTX 4070 12GB</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-cyber-border">
+                            <span class="text-xl font-black text-cyber-cyan">₪ 7,490</span>
+                            <button onclick="addToCart('מחשב גיימינג NEXUS Beast', 7490)" class="px-4 py-2 rounded-lg bg-cyber-cyan text-black font-bold hover:opacity-90 transition-all text-sm">
+                                <i class="fa-solid fa-cart-shopping ml-1"></i> הוסף לסל
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-cyber-dark mb-4 flex items-center justify-center border border-cyber-border">
+                                <span class="absolute top-3 right-3 bg-cyber-purple/20 text-cyber-purple text-xs font-bold px-2.5 py-1 rounded-full border border-cyber-purple/30">חדש</span>
+                                <i class="fa-solid fa-keyboard text-6xl text-cyber-purple"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">מקדת מכנית HyperPro RGB</h3>
+                            <p class="text-sm text-gray-400 mb-4">מתגים אדומים אופטיים, תאורה אישית, חיבור אלחוטי מהיר</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-cyber-border">
+                            <span class="text-xl font-black text-cyber-cyan">₪ 649</span>
+                            <button onclick="addToCart('מקדת מכנית HyperPro RGB', 649)" class="px-4 py-2 rounded-lg bg-cyber-cyan text-black font-bold hover:opacity-90 transition-all text-sm">
+                                <i class="fa-solid fa-cart-shopping ml-1"></i> הוסף לסל
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-cyber-dark mb-4 flex items-center justify-center border border-cyber-border">
+                                <span class="absolute top-3 right-3 bg-cyber-cyan/20 text-cyber-cyan text-xs font-bold px-2.5 py-1 rounded-full border border-cyber-cyan/30">פופולרי</span>
+                                <i class="fa-solid fa-headphones text-6xl text-cyber-pink"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">אוזניות גיימינג Quantum 7.1 Pro</h3>
+                            <p class="text-sm text-gray-400 mb-4">סאונד היקפי אמיתי, מיקרופון ביטול רעשים AI, נוחות מקסימלית</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-cyber-border">
+                            <span class="text-xl font-black text-cyber-cyan">₪ 429</span>
+                            <button onclick="addToCart('אוזניות גיימינג Quantum 7.1 Pro', 429)" class="px-4 py-2 rounded-lg bg-cyber-cyan text-black font-bold hover:opacity-90 transition-all text-sm">
+                                <i class="fa-solid fa-cart-shopping ml-1"></i> הוסף לסל
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-48 rounded-xl overflow-hidden bg-cyber-dark mb-4 flex items-center justify-center border border-cyber-border">
+                                <span class="absolute top-3 right-3 bg-amber-500/20 text-amber-400 text-xs font-bold px-2.5 py-1 rounded-full border border-amber-500/30">בלעדי</span>
+                                <i class="fa-solid fa-computer-mouse text-6xl text-amber-400"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">עכבר גיימינג אלחוטי Viper X 30K</h3>
+                            <p class="text-sm text-gray-400 mb-4">חיישן 30,000 DPI, משקל אצה של 54 גרם בלבד, 90 שעות סוללה</p>
+                        </div>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-cyber-border">
+                            <span class="text-xl font-black text-cyber-cyan">₪ 499</span>
+                            <button onclick="addToCart('עכבר גיימינג Viper X 30K', 499)" class="px-4 py-2 rounded-lg bg-cyber-cyan text-black font-bold hover:opacity-90 transition-all text-sm">
+                                <i class="fa-solid fa-cart-shopping ml-1"></i> הוסף לסל
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 2: WHAT WE OFFER ================= -->
+        <section id="page-offer" class="page-view hidden animate-fade-in py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-5xl font-black mb-4">מה אנחנו מציעים</h2>
+                    <p class="text-gray-400 text-lg">אנחנו מספקים את הפתרונות המקיפים ביותר לגיימרים בישראל, החל מבניית מחשבים מותאמים אישית ועד לציוד הקפי תחרותי.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="cyber-card rounded-2xl p-8 text-center">
+                        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan text-2xl">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">בניית מחשבים בהתאמה אישית</h3>
+                        <p class="text-gray-400">הגדר את הצרכים שלך, ובחר את הרכיבים המושלמים. המומחים שלנו ירכיבו, יבדקו וישברו שיאים עבורך.</p>
+                    </div>
+
+                    <div class="cyber-card rounded-2xl p-8 text-center">
+                        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-2xl">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">ציוד היקפי מקצועי</h3>
+                        <p class="text-gray-400">עכברים, מקלדות, אוזניות ומסכים מהמותגים המובילים בעולם (Razer, Logitech, ASUS ROG, Corsair ועוד).</p>
+                    </div>
+
+                    <div class="cyber-card rounded-2xl p-8 text-center">
+                        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-cyber-pink/10 border border-cyber-pink/30 flex items-center justify-center text-cyber-pink text-2xl">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">מעבדת תיקונים ושדרוגים</h3>
+                        <p class="text-gray-400">תמיכה טכנית 24/7, שירותי מעבדה מהירים, החלפת חלפים מקוריים ואבחון תקלות מקצועי.</p>
+                    </div>
+                </div>
+
+                <!-- Product Catalog Filter Section -->
+                <div class="border-t border-cyber-border pt-12">
+                    <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+                        <h3 class="text-2xl font-bold">הקטלוג המלא</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <button onclick="filterProducts('all')" class="filter-btn px-4 py-2 rounded-lg bg-cyber-cyan text-black font-bold text-sm transition-all">הכל</button>
+                            <button onclick="filterProducts('pcs')" class="filter-btn px-4 py-2 rounded-lg bg-cyber-card border border-cyber-border text-gray-300 hover:text-white text-sm transition-all">מחשבים</button>
+                            <button onclick="filterProducts('peripherals')" class="filter-btn px-4 py-2 rounded-lg bg-cyber-card border border-cyber-border text-gray-300 hover:text-white text-sm transition-all">ציוד היקפי</button>
+                        </div>
+                    </div>
+
+                    <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Dynamic Catalog Items will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 3: ABOUT ================= -->
+        <section id="page-about" class="page-view hidden animate-fade-in py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <span class="text-cyber-cyan font-bold tracking-wider uppercase text-sm mb-2 block">הסיפור שלנו</span>
+                        <h2 class="text-3xl sm:text-5xl font-black mb-6">מובילים את מהפכת הגיימינג בישראל משנת 2018</h2>
+                        <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                            NEXUS.GG הוקמה על ידי גיימרים עבור גיימרים. הבנו שהשוק המקומי זקוק למקום שמשלב חומרה ברמה הגבוהה ביותר, שירות ללא פשרות ומחירים הוגנים.
+                        </p>
+                        <p class="text-gray-400 mb-8 leading-relaxed">
+                            הצוות שלנו מורכב ממומחי חומרה ותיקים, שחקני ספורט אלקטרוני ומהנדסי מערכות שחיים ונושמים טכנולוגיה. אנחנו כאן כדי לוודא שכל לקוח מקבל את המערכת האופטימלית לצרכיו.
+                        </p>
+                        <div class="grid grid-cols-3 gap-4 border-t border-cyber-border pt-6">
+                            <div>
+                                <span class="block text-3xl font-black text-cyber-cyan">15K+</span>
+                                <span class="text-sm text-gray-400">לקוחות מרוצים</span>
+                            </div>
+                            <div>
+                                <span class="block text-3xl font-black text-cyber-purple">24/7</span>
+                                <span class="text-sm text-gray-400">תמיכה טכנית</span>
+                            </div>
+                            <div>
+                                <span class="block text-3xl font-black text-cyber-pink">100%</span>
+                                <span class="text-sm text-gray-400">אחריות מקורית</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -inset-2 bg-gradient-to-r from-cyber-cyan to-cyber-purple rounded-3xl opacity-30 blur-xl"></div>
+                        <div class="relative cyber-card rounded-3xl p-8 border border-cyber-border flex flex-col justify-center items-center text-center min-h-[400px]">
+                            <i class="fa-solid fa-award text-8xl text-cyber-cyan mb-6"></i>
+                            <h3 class="text-2xl font-bold mb-3">סטנדרט האיכות של NEXUS</h3>
+                            <p class="text-gray-400">כל מחשב שעוזב את המעבדה שלנו עובר בדיקות מאמץ מחמירות של 48 שעות כדי להבטיח אפס תקלות ויציבות מושלמת.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PAGE 4: CONTACT ================= -->
+        <section id="page-contact" class="page-view hidden animate-fade-in py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-5xl font-black mb-4">צור קשר עם המומחים</h2>
+                    <p class="text-gray-400 text-lg">יש לך שאלות לגבי מפרט? זקוק להצעת מחיר מותאמת אישית? אנחנו כאן בשבילך.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="cyber-card rounded-3xl p-8 border border-cyber-border">
+                        <h3 class="text-2xl font-bold mb-6">שלח לנו הודעה</h3>
+                        <form onsubmit="handleContactSubmit(event)" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">שם מלא</label>
+                                <input type="text" id="contact-name" required class="w-full bg-cyber-dark border border-cyber-border rounded-xl px-4 py-3 text-white focus:border-cyber-cyan focus:outline-none transition-all" placeholder="ישראל ישראלי">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">דוא"ל או טלפון</label>
+                                <input type="text" id="contact-info" required class="w-full bg-cyber-dark border border-cyber-border rounded-xl px-4 py-3 text-white focus:border-cyber-cyan focus:outline-none transition-all" placeholder="050-0000000 / email@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">הודעה / מפרט מבוקש</label>
+                                <textarea id="contact-message" rows="4" required class="w-full bg-cyber-dark border border-cyber-border rounded-xl px-4 py-3 text-white focus:border-cyber-cyan focus:outline-none transition-all" placeholder="תאר את הצורך שלך..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-purple text-black font-bold text-lg hover:opacity-90 transition-all shadow-lg neon-glow-cyan">
+                                <i class="fa-solid fa-paper-plane ml-2"></i> שליחת הודעה
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details & Info -->
+                    <div class="space-y-6">
+                        <div class="cyber-card rounded-3xl p-8 border border-cyber-border flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan text-xl flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1">כתובת המעבדה והחנות</h4>
+                                <p class="text-gray-400">רחוב הספיר 12, מתחם העסקים, תל אביב</p>
+                            </div>
+                        </div>
+
+                        <div class="cyber-card rounded-3xl p-8 border border-cyber-border flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-purple/10 border border-cyber-purple/30 flex items-center justify-center text-cyber-purple text-xl flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1">מוקד טלפוני</h4>
+                                <p class="text-gray-400">03-555-8899 | א'-ה' 09:00 - 20:00</p>
+                            </div>
+                        </div>
+
+                        <div class="cyber-card rounded-3xl p-8 border border-cyber-border flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-cyber-pink/10 border border-cyber-pink/30 flex items-center justify-center text-cyber-pink text-xl flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1">תמיכה אלקטרונית</h4>
+                                <p class="text-gray-400">support@nexus-gaming.co.il</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-dark border-t border-cyber-border py-12 text-center text-gray-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="mb-4">© 2026 NEXUS.GG - כל הזכויות שמורות לחנות הגיימינג המתקדמת בישראל.</p>
+            <div class="flex justify-center gap-6 text-lg text-gray-400">
+                <a href="#" class="hover:text-cyber-cyan transition-colors"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="hover:text-cyber-cyan transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-cyber-cyan transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-cyber-cyan transition-colors"><i class="fa-brands fa-twitch"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal Overlay -->
+    <div id="cart-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="cyber-card rounded-3xl max-w-lg w-full p-6 border border-cyber-border relative">
+            <button onclick="closeCartModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-cart-shopping text-cyber-cyan"></i> סל הקניות שלך
+            </h3>
+            <div id="cart-items-container" class="max-h-60 overflow-y-auto space-y-3 mb-6 divide-y divide-cyber-border">
+                <!-- Cart items injected here -->
+            </div>
+            <div class="border-t border-cyber-border pt-4 mb-6 flex justify-between items-center text-lg">
+                <span class="font-bold">סה"כ לתשלום:</span>
+                <span id="cart-total" class="font-black text-cyber-cyan">₪ 0</span>
+            </div>
+            <button onclick="checkout()" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyber-cyan to-cyber-purple text-black font-bold text-lg hover:opacity-90 transition-all">
+                מעבר לתשלום מאובטח
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification Toast / Custom Message Box -->
+    <div id="toast" class="fixed bottom-6 left-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 bg-cyber-card border border-cyber-cyan text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-cyber-cyan text-xl"></i>
+        <span id="toast-message">הפעולה בוצעה בהצלחה!</span>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Shopping cart state
+        let cart = [];
+
+        // Catalog items data
+        const catalogData = [
+            { id: 1, name: 'מחשב גיימינג NEXUS Beast RTX 4070', category: 'pcs', price: 7490, icon: 'fa-computer', desc: 'i7-14700KF | 32GB RAM | 1TB NVMe | RTX 4070 12GB' },
+            { id: 2, name: 'מחשב אולטרה NEXUS Titan RTX 4090', category: 'pcs', price: 14990, icon: 'fa-server', desc: 'i9-14900KS | 64GB RAM | 2TB NVMe | RTX 4090 24GB' },
+            { id: 3, name: 'מחשב מתחילים NEXUS Spark GTX 1650', category: 'pcs', price: 3490, icon: 'fa-desktop', desc: 'i5-12400F | 16GB RAM | 500GB SSD | GTX 1650' },
+            { id: 4, name: 'מקלדת מכנית HyperPro RGB', category: 'peripherals', price: 649, icon: 'fa-keyboard', desc: 'מתגים אדומים אופטיים, תאורה אישית, חיבור אלחוטי' },
+            { id: 5, name: 'אוזניות גיימינג Quantum 7.1 Pro', category: 'peripherals', price: 429, icon: 'fa-headphones', desc: 'סאונד היקפי אמיתי, מיקרופון ביטול רעשים AI' },
+            { id: 6, name: 'עכבר גיימינג אלחוטי Viper X 30K', category: 'peripherals', price: 499, icon: 'fa-computer-mouse', desc: 'חיישן 30,000 DPI, משקל 54 גרם בלבד' }
+        ];
+
+        // Switch active pages smoothly
+        function switchPage(pageId) {
+            // Hide all page views
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(p => p.classList.add('hidden'));
+
+            // Show selected page
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // Update navigation buttons styling
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.className = 'nav-btn px-4 py-2 rounded-lg font-medium text-gray-300 hover:text-white hover:bg-cyber-border/30 transition-all';
+            });
+
+            const activeBtn = document.getElementById('nav-' + pageId);
+            if (activeBtn) {
+                activeBtn.className = 'nav-btn px-4 py-2 rounded-lg font-medium text-cyan-400 bg-cyber-border/55 transition-all';
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // If switching to offer page, render catalog
+            if (pageId === 'offer') {
+                filterProducts('all');
+            }
+        }
+
+        // Render catalog items based on filter
+        function filterProducts(category) {
+            // Update filter buttons UI
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.className = 'filter-btn px-4 py-2 rounded-lg bg-cyber-card border border-cyber-border text-gray-300 hover:text-white text-sm transition-all';
+            });
+            event && event.target && (event.target.className = 'filter-btn px-4 py-2 rounded-lg bg-cyber-cyan text-black font-bold text-sm transition-all');
+
+            const container = document.getElementById('catalog-grid');
+            if (!container) return;
+
+            const filtered = category === 'all' 
+                ? catalogData 
+                : catalogData.filter(item => item.category === category);
+
+            container.innerHTML = filtered.map(item => `
+                <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 rounded-xl overflow-hidden bg-cyber-dark mb-4 flex items-center justify-center border border-cyber-border">
+                            <i class="fa-solid ${item.icon} text-6xl text-cyber-cyan"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-1">${item.name}</h3>
+                        <p class="text-sm text-gray-400 mb-4">${item.desc}</p>
+                    </div>
+                    <div class="flex items-center justify-between mt-auto pt-4 border-t border-cyber-border">
+                        <span class="text-xl font-black text-cyber-cyan">₪ ${item.price.toLocaleString()}</span>
+                        <button onclick="addToCart('${item.name}', ${item.price})" class="px-4 py-2 rounded-lg bg-cyber-cyan text-black font-bold hover:opacity-90 transition-all text-sm">
+                            <i class="fa-solid fa-cart-shopping ml-1"></i> הוסף לסל
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Cart functions
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartBadge();
+            showToast(`המוצר "${name}" נוסף לסל הקניות!`);
+        }
+
+        function updateCartBadge() {
+            const badge = document.getElementById('cart-count');
+            if (badge) {
+                badge.innerText = cart.length;
+                badge.classList.remove('hidden');
+            }
+        }
+
+        function openCartModal() {
+            const modal = document.getElementById('cart-modal');
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-gray-400 text-center py-6">סל הקניות שלך ריק כרגע.</p>';
+                totalEl.innerText = '₪ 0';
+            } else {
+                container.innerHTML = cart.map((item, index) => `
+                    <div class="flex justify-between items-center py-3">
+                        <div>
+                            <span class="font-bold block">${item.name}</span>
+                            <span class="text-sm text-cyber-cyan">₪ ${item.price.toLocaleString()}</span>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-300 text-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                `).join('');
+
+                const total = cart.reduce((acc, item) => acc + item.price, 0);
+                totalEl.innerText = `₪ ${total.toLocaleString()}`;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartBadge();
+            openCartModal();
+        }
+
+        function closeCartModal() {
+            document.getElementById('cart-modal').classList.add('hidden');
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                showToast('הסל ריק! אנא הוסף מוצרים לפני תשלום.');
+                return;
+            }
+            closeCartModal();
+            cart = [];
+            updateCartBadge();
+            showToast('הזמנתך נקלטה בהצלחה! צוות NEXUS ייצור עמך קשר בקרוב.');
+        }
+
+        // Contact Form Submission
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            showToast(`תודה ${name}! הודעתך התקבלה בהצלחה.`);
+            event.target.reset();
+        }
+
+        // Custom Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toast-message');
+            msgEl.innerText = message;
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
